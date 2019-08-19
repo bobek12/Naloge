@@ -5,11 +5,12 @@ public  class Podatki {
     public static HashMap<String, Integer> getNumbers(){
         HashMap<String, Integer> phoneNumbersSTD = new HashMap<>();
         /*
+            Napolnimo HashMap
             Ključ: STD,
             Vrednost: Tip telefonske številke
         */
 
-        //Skupna stevila (Mobitel + Telefon)
+        /*Skupna stevila (Mobitel + Telefon) */
         phoneNumbersSTD.put("30", 0);
         phoneNumbersSTD.put("34", 0);
         phoneNumbersSTD.put("35", 0);
@@ -23,7 +24,7 @@ public  class Podatki {
         phoneNumbersSTD.put("74", 0);
         phoneNumbersSTD.put("75", 0);
 
-        //Mobilna števila (mobilna - skupna)
+        /*Mobilna števila (mobilna - skupna) */
         phoneNumbersSTD.put("31", 1);
         phoneNumbersSTD.put("38", 1);
         phoneNumbersSTD.put("39", 1);
@@ -40,7 +41,7 @@ public  class Podatki {
         phoneNumbersSTD.put("78", 1);
         phoneNumbersSTD.put("79", 1);
 
-        //Telefonska števila (telefonska - skupna)
+        /* Telefonska števila (telefonska - skupna) */
         phoneNumbersSTD.put("12", 2);
         phoneNumbersSTD.put("13", 2);
         phoneNumbersSTD.put("16", 2);
