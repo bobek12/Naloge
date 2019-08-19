@@ -18,7 +18,7 @@ public class Main {
                     System.out.println("Vpiši telefonsko številko:");
                     String writePhoneNumber = s.nextLine();
 
-                    Telefon phone = new Telefon(writePhoneNumber);
+                    PhoneNumber phone = new PhoneNumber(writePhoneNumber);
 
                     if(phone.getPhoneNumber() != null){
                         //Pod-menu - Vpis telefonske številke

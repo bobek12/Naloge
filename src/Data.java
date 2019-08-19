@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public  class Podatki {
+public  class Data {
 
     public static HashMap<String, Integer> getNumbers(){
         HashMap<String, Integer> phoneNumbersSTD = new HashMap<>();

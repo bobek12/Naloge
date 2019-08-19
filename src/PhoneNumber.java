@@ -1,10 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Telefon {
+public class PhoneNumber {
     private String phoneNumber;
 
-    public Telefon (String phoneNumber){
+    public PhoneNumber (String phoneNumber){
         setPhoneNumber(phoneNumber);
     }
 
@@ -27,7 +27,7 @@ public class Telefon {
     public void checkPhoneNumberType() {
         String phoneNumberStd = this.phoneNumber.substring(3,5);
 
-        HashMap<String, Integer> phoneNumbers = Podatki.getNumbers();
+        HashMap<String, Integer> phoneNumbers = Data.getNumbers();
 
         int typeOfPhoneNumber = -1;
 
