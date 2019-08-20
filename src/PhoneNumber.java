@@ -35,7 +35,6 @@ public class PhoneNumber {
             if(entry.getKey().equals(phoneNumberStd))
                 typeOfPhoneNumber =  entry.getValue();
         }
-
         getMessageAboutNumberType(typeOfPhoneNumber);
     }
 
