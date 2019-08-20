@@ -8,7 +8,7 @@ public class PhoneNumber {
     /* Nastavimo objekt v primeru, da je vpisan niz pravilen */
     private void setPhoneNumber(String phoneNumber) {
         boolean validate = validatePhoneNumber(phoneNumber);
-    
+
         if(validate)
             this.phoneNumber = phoneNumber;
         else
@@ -26,7 +26,7 @@ public class PhoneNumber {
         String typeOfPhoneNumber;
 
         /*Telefonska številka ali mobilna številka */
-        if(phoneNumberStd.matches("^([347][01])|([4][39])|([59][1])|([6][4598])$"))
+        if(phoneNumberStd.matches("^([347][01])|([4][39])|([5][1])|([6][4598])$"))
             typeOfPhoneNumber = "Mobilni telefon";
         else
             typeOfPhoneNumber = "Telefon";

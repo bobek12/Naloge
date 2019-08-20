@@ -1,3 +1,4 @@
+import javax.xml.crypto.Data;
 import java.util.Scanner;
 
 public class Main {
@@ -23,7 +24,12 @@ public class Main {
                         if (phone.getPhoneNumber() != null)
                             phone.checkPhoneNumberTypeByRegex();
 
-                    break;
+                        break;
+
+                    case "2":
+                        Database database = new Database();
+                        database.insertPhoneNumber();
+
                     default:
                         runProgram = false;
                         break;
