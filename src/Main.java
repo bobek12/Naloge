@@ -41,7 +41,7 @@ public class Main {
                         if (phoneNumber.getPhoneNumber() != null)
                                     phoneNumber.getPhoneNumberByNumber(phoneNumber.getPhoneNumber());
                         break;
-                    /*Izbriši telefonsko številko glede na vnešeno tel. številko */
+                    /* Izbriše telefonsko številko glede na vnešeno tel. številko */
                     case "4":
                         System.out.println("Vpiši telefonsko številko za brisanje:");
                         writePhoneNumber = s.nextLine();
@@ -50,7 +50,7 @@ public class Main {
                         if (phoneNumberDel.getPhoneNumber() != null)
                             phoneNumberDel.deletePhoneNumberByNumber(phoneNumberDel.getPhoneNumber());
                         break;
-
+                    /* Izbriše vse  telefonske številke iz DB */
                     case "5":
                         PhoneNumber.deleteAllPhoneNumbers();
                         break;
