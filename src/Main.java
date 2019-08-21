@@ -29,6 +29,18 @@ public class Main {
                     case "2":
                         Database database = new Database();
                         database.insertPhoneNumber();
+                        System.out.println("---------------------------");
+                        database.selectAllPhoneNumbers();
+                        System.out.println("---------------------------");
+                        database.selectPhoneNumber();
+                        System.out.println("---------------------------");
+                        database.deletePhoneNumber();
+                        System.out.println("---------------------------");
+                        database.selectAllPhoneNumbers();
+                        System.out.println("---------------------------");
+                        database.deleteAllPhoneNumbers();
+                        System.out.println("---------------------------");
+                        database.selectAllPhoneNumbers();
 
                     default:
                         runProgram = false;
