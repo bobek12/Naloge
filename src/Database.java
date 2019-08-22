@@ -1,23 +1,32 @@
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import javax.sql.DataSource;
 import java.sql.*;
 
 public class Database {
-    private static Connection connect() {
-        Connection conn = null;
+    /* Hikari config */
+    private static DataSource dataSource() {
+
         String url = "jdbc:sqlite:databaseNaloge.db";
+        HikariConfig config = new HikariConfig();
+
         try {
-            conn = DriverManager.getConnection(url);
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            config.setPoolName("AuthMeSQLitePool");
+            config.setDriverClassName("org.sqlite.JDBC");
+            config.setJdbcUrl(url);
+        }catch (Exception e){
+                e.printStackTrace();
         }
-        return conn;
+        return new HikariDataSource(config);
     }
-
+    /* Vstavi telefonsko številko v podatkovno bazo */
     public static void insertPhoneNumber(String phoneNumber, int type) {
-
         String sqlInsert = "INSERT INTO phone_numbers(phone_number, type) VALUES (?,?)";
 
-        try (Connection conn = connect();
+        DataSource dataSource = Database.dataSource();
+
+        try (Connection conn = dataSource.getConnection();
              PreparedStatement pstm = conn.prepareStatement(sqlInsert)) {
             pstm.setString(1, phoneNumber);
             pstm.setInt(2, type);
@@ -34,11 +43,13 @@ public class Database {
         }
 
     }
-
+    /* Pridobi vsa števila iz podatkovne baze*/
     public static void selectAllPhoneNumbers() {
         String sqlSelectAll = "SELECT * FROM phone_numbers";
+;
+        DataSource dataSource = Database.dataSource();
 
-        try (Connection conn = connect();
+        try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement()) {
             ResultSet result = stmt.executeQuery(sqlSelectAll);
 
@@ -56,11 +67,14 @@ public class Database {
             System.out.println(e.getMessage());
         }
     }
-
+    /* Pridobi številko iz podatkovne baze*/
     public static void selectPhoneNumber(String phoneNumber) {
+
         String sqlSelect = "SELECT * FROM phone_numbers WHERE phone_number= ?";
 
-        try (Connection conn = connect();
+        DataSource dataSource = Database.dataSource();
+
+        try (Connection conn = dataSource.getConnection();
              PreparedStatement pstm = conn.prepareStatement(sqlSelect)) {
             pstm.setString(1, phoneNumber);
 
@@ -79,11 +93,13 @@ public class Database {
             System.out.println(e.getMessage());
         }
     }
-
+    /* Izbris števila iz tabele */
     public static void deletePhoneNumber(String phoneNumber) {
         String sqlDelete = "DELETE FROM phone_numbers WHERE phone_number = ?";
 
-        try (Connection conn = connect();
+        DataSource dataSource = Database.dataSource();
+
+        try (Connection conn = dataSource.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sqlDelete)) {
 
             pstmt.setString(1, phoneNumber);
@@ -98,12 +114,13 @@ public class Database {
             System.out.println(e.getMessage());
         }
     }
-
+    /* Izbris vseh števil iz tabele */
     public static void deleteAllNumbers() {
         String sqlDelete = "DELETE FROM phone_numbers";
 
+        DataSource dataSource = Database.dataSource();
 
-        try (Connection conn = connect();
+        try (Connection conn = dataSource.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sqlDelete)) {
             int i = pstmt.executeUpdate();
 
