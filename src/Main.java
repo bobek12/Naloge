@@ -1,13 +1,8 @@
-import com.google.common.base.Functions;
-import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
-import com.google.common.collect.Ordering;
+import com.google.common.collect.Multimap;
 
-import javax.xml.crypto.Data;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.*;
+import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
@@ -64,18 +59,13 @@ public class Main {
                     case "5":
                         PhoneNumber.deleteAllPhoneNumbers();
                         break;
-                    /* Izpis po tipu CDR */
+                    /* Izpis po tipu CDR sortiran */
                     case "6":
-                        ListMultimap<String, Klic> multiMap = Klic.readFileToMultiMap(file);
+                        Multimap<String, Klic> multiMap = Klic.readFileToMultiMap(file);
                         Klic.GetAllUniqueKeyForPrint(multiMap);
                         Klic.getAllValuesByTheType(s, multiMap);
 
                         break;
-                    case "7":
-                        //TODO: sortiranje po velikosti
-                        ListMultimap<String, Klic> multiMapSort = Klic.readFileToMultiMap(file);
-
-
                     default:
                         runProgram = false;
                         break;
@@ -83,8 +73,6 @@ public class Main {
             }
         }
     }
-
-    private static void sortMultimapByTimeOfCall(ListMultimap<String,Klic> multiMapSort) { }
 
     /* Izpis podmenuja */
     public static void programMenu() {
@@ -94,7 +82,7 @@ public class Main {
         System.out.println("3. Izpis telefonske številke");
         System.out.println("4. Brisanje telefonske številke");
         System.out.println("5. Brisanje vseh telefonskih številk");
-        System.out.println("6. Izpis po tipu CDR ");
+        System.out.println("6. Izpis po tipu CDR (Sortiran po času klica)");
         System.out.println("---------------------------");
     }
 

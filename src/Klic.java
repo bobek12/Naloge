@@ -1,9 +1,11 @@
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.ListMultimap;
+import com.google.common.collect.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Klic {
@@ -12,7 +14,7 @@ public class Klic {
     private String bPhoneNumber;
     private String timeOfCall;
     private String callLenght;
-    
+
     public Klic(String cdrType, String aPhoneNumber, String bPhoneNumber, String timeOfCall, String callLenght) {
 
         this.cdrType = cdrType;
@@ -42,23 +44,32 @@ public class Klic {
         return callLenght;
     }
 
-    public static ListMultimap<String, Klic> readFileToMultiMap(String file){
-        ListMultimap<String, Klic> multimap = ArrayListMultimap.create();
+    /* Prepis vrednosti iz datoteke v Multimap */
+    public static Multimap<String, Klic> readFileToMultiMap(String file){
+        Multimap<String, Klic> sortedMultiMap = setMultimapSorting();
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             while (br.ready()) {
                 String[] a = (br.readLine().split(";"));
 
                 Klic callInfo = new Klic(a[0], a[1], a[2], a[3], a[4]);
-                multimap.put(callInfo.getCdrType(), callInfo);
+                sortedMultiMap.put(callInfo.getCdrType(), callInfo);
             }
         }catch (IOException e) {
             e.printStackTrace();
         }
-        return multimap ;
+        return sortedMultiMap ;
     }
-
-    public static void GetAllUniqueKeyForPrint(ListMultimap<String,Klic> multiMap) {
+    /* Funkcija za nastavite sortiranaju po datumu klica od najmlajšega do najstarejšega */
+    private static Multimap<String, Klic> setMultimapSorting() {
+        return TreeMultimap.create(Ordering.natural(), Ordering.from((lhs, rhs) -> {
+            Date a = new Date(Long.parseLong(lhs.getTimeOfCall()) * 1000);
+            Date b = new Date(Long.parseLong(rhs.getTimeOfCall()) * 1000);
+            return (int) b.compareTo(a);
+        }));
+    }
+    /* Izpis vseh tipov CDR, ki so UNIQ */
+    public static void GetAllUniqueKeyForPrint(Multimap<String,Klic> multiMap) {
         System.out.println("Vsi ključi");
 
         var uniqueKeys = multiMap.keySet().toArray();
@@ -67,19 +78,17 @@ public class Klic {
             System.out.println(b);
         }
     }
-
-    public static void getAllValuesByTheType(Scanner s, ListMultimap<String, Klic> multiMap) {
+    /* Izpis vseh klicov po Tipu CDR */
+    public static void getAllValuesByTheType(Scanner s, Multimap<String, Klic> multiMap) {
         System.out.println("Izberi tip CDR-ja");
         String selectOption = s.nextLine();
 
         if (multiMap.containsKey(selectOption)) {
             for (Klic e : multiMap.get(selectOption)) {
-                System.out.println(e.getCdrType() + " " + e.getaPhoneNumber() + " " + e.getbPhoneNumber() + " " + e.getTimeOfCall() + " " + e.getCallLenght());
+                System.out.println(e.getCdrType() + " " + e.getaPhoneNumber() + " " + e.getbPhoneNumber() + " " + e.getTimeOfCall() + "(" + new Date(Long.parseLong(e.getTimeOfCall()) * 1000) + ") " + e.getCallLenght());
             }
         } else {
             System.out.println("CDR ne obstaja");
-
         }
     }
-
 }
