@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4ffdf8a-f3ab-4ff1-8306-1cc1205ec8d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/databaseNaloge.db" beforeDir="false" afterPath="$PROJECT_DIR$/databaseNaloge.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/klici.cdr" beforeDir="false" afterPath="$PROJECT_DIR$/klici.cdr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Klic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="-7">
               <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -63,22 +64,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/klici.cdr">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="36" />
+            <state>
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Klic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+            <state relative-caret-position="187">
+              <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#Klic#0;class#Klic#0" />
+                <element signature="method#readFileToMultiMap#0;class#Klic#0" />
+                <element signature="method#compareGetTimeOfCall#0;class#Klic#0" />
+                <element signature="method#GetAllUniqueKeyForPrint#0;class#Klic#0" />
+                <element signature="method#getAllValuesByTheType#0;class#Klic#0" />
               </folding>
             </state>
           </provider>
@@ -110,8 +116,8 @@
         <option value="$PROJECT_DIR$/src/PhoneNumber.java" />
         <option value="$PROJECT_DIR$/src/Database.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Klic.java" />
         <option value="$PROJECT_DIR$/klici.cdr" />
+        <option value="$PROJECT_DIR$/src/Klic.java" />
       </list>
     </option>
   </component>
@@ -138,10 +144,6 @@
               <item name="Naloge" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Naloge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -160,7 +162,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -204,7 +206,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79303000" />
+    <option name="totallyTimeSpent" value="89156000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -219,7 +221,7 @@
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.18168813" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.1795422" />
       <window_info id="Structure" order="1" sideWeight="0.50230414" side_tool="true" weight="0.20529328" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -229,7 +231,7 @@
       <window_info anchor="bottom" id="Duplicates" weight="0.32918397" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32918397" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4983845" visible="true" weight="0.43983403" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4983845" visible="true" weight="0.41908714" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42876902" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -570,24 +572,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PhoneNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
+        <state relative-caret-position="832">
           <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Klic.java">
+    <entry file="file://$PROJECT_DIR$/klici.cdr">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state>
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="-7">
           <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -596,10 +595,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/klici.cdr">
+    <entry file="file://$PROJECT_DIR$/src/Klic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="187">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Klic#0;class#Klic#0" />
+            <element signature="method#readFileToMultiMap#0;class#Klic#0" />
+            <element signature="method#compareGetTimeOfCall#0;class#Klic#0" />
+            <element signature="method#GetAllUniqueKeyForPrint#0;class#Klic#0" />
+            <element signature="method#getAllValuesByTheType#0;class#Klic#0" />
+          </folding>
         </state>
       </provider>
     </entry>
