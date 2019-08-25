@@ -62,8 +62,8 @@ public class Klic {
         System.out.println("Vsi ključi");
         var uniqueKeys = multiMap.keySet().toArray();
 
-        for (Object b : uniqueKeys) {
-            System.out.println(b);
+        for (Object cdrTip : uniqueKeys) {
+            System.out.println(cdrTip);
         }
     }
     /* Izpis vseh klicov po Tipu CDR */
@@ -72,8 +72,8 @@ public class Klic {
         String selectOption = s.nextLine();
 
         if (multiMap.containsKey(selectOption)) {
-            for (Klic e : multiMap.get(selectOption)) {
-                System.out.println(e.getCdrType() + " " + e.getaPhoneNumber() + " " + e.getbPhoneNumber() + " " + e.getTimeOfCall() + "(" + new Date(Long.parseLong(e.getTimeOfCall()) * 1000) + ") " + e.getCallLenght());
+            for (Klic klic : multiMap.get(selectOption)) {
+                System.out.println(klic.getCdrType() + " " + klic.getaPhoneNumber() + " " + klic.getbPhoneNumber() + " " + klic.getTimeOfCall() + "(" + new Date(Long.parseLong(klic.getTimeOfCall()) * 1000) + ") " + klic.getCallLenght());
             }
         } else {
             System.out.println("CDR ne obstaja");
